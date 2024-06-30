@@ -1,6 +1,6 @@
 # Hi there! 👋
 
-I'm a passionate student developer currently in my senior year.
+### I'm a passionate student developer currently in my senior year.
 
 ### What I love working with: ###
 <div display="flex">
