@@ -1,56 +1,62 @@
-### About me
-```PHP
-<?php
+<details>
+  <summary>
+      <h3>About me (Click to expand)</h3>
+  </summary>
 
-$introduction = [
-    "name" => "Lutreze Hue Jacinto",
-    "current_year" => "4th-year",
-    "course" => "Information Technology",
-    "role" => "Student Developer",
-    "skills" => [
-        "HTML", "CSS", "JavaScript", "MySQL", "PHP"
-    ],
-    "frameworks_i_used" => [
-        "Tailwind", "Laravel"
-    ],
-    "software_skills" => [
-        "Photoshop", "Adobe Illustrator", "Adobe Lightroom", "Figma"
-    ],
-    "future_learning_goals" => "MERN stack"
-];
+  ```PHP
+  <?php
+  
+  $introduction = [
+      "name" => "Lutreze Hue Jacinto",
+      "current_year" => "4th-year",
+      "course" => "Information Technology",
+      "role" => "Student Developer",
+      "skills" => [
+          "HTML", "CSS", "JavaScript", "MySQL", "PHP"
+      ],
+      "frameworks_i_used" => [
+          "Tailwind", "Laravel"
+      ],
+      "software_skills" => [
+          "Photoshop", "Adobe Illustrator", "Adobe Lightroom", "Figma"
+      ],
+      "future_learning_goals" => "MERN stack"
+  ];
+  
+  function introduce_myself($info) {
+      $skills = $info['skills'];
+      $frameworks = $info['frameworks_i_used'];
+      $software = $info['software_skills'];
+  
+      $skills_list = [];
+      foreach ($skills as $skill) {
+          if ($skill === "CSS" && in_array("Tailwind", $frameworks)) {
+              $skills_list[] = $skill . " (including Tailwind)";
+          } else {
+              $skills_list[] = $skill;
+          }
+      }
+  
+      $skills_list_str = implode(", ", array_slice($skills_list, 0, -1)) . " and " . end($skills_list);
+  
+      $frameworks_str = implode(", ", array_slice($frameworks, -1));
+      $software_str = implode(", ", $software);
+  
+      echo "Hello! My name is " . $info['name'] . ". I'm a " . $info['current_year'] . " " . $info['course']
+      . " student and a self-taught web developer with experience in PHP frameworks (including " 
+      . $frameworks_str . "). I'm constantly learning and expanding my skillset, which currently includes " 
+      . $skills_list_str . ".<br>";
+      
+      echo "In addition to web development, I'm passionate about design and enjoy using tools like " 
+      . $software_str . ". I'm also eager to learn the " . $info['future_learning_goals'] 
+      . " and delve into it in the near future.";
+  }
+  
+  introduce_myself($introduction);
+  ?>
+````
+</details>
 
-function introduce_myself($info) {
-    $skills = $info['skills'];
-    $frameworks = $info['frameworks_i_used'];
-    $software = $info['software_skills'];
-
-    $skills_list = [];
-    foreach ($skills as $skill) {
-        if ($skill === "CSS" && in_array("Tailwind", $frameworks)) {
-            $skills_list[] = $skill . " (including Tailwind)";
-        } else {
-            $skills_list[] = $skill;
-        }
-    }
-
-    $skills_list_str = implode(", ", array_slice($skills_list, 0, -1)) . " and " . end($skills_list);
-
-    $frameworks_str = implode(", ", array_slice($frameworks, -1));
-    $software_str = implode(", ", $software);
-
-    echo "Hello! My name is " . $info['name'] . ". I'm a " . $info['current_year'] . " " . $info['course']
-    . " student and a self-taught web developer with experience in PHP frameworks (including " 
-    . $frameworks_str . "). I'm constantly learning and expanding my skillset, which currently includes " 
-    . $skills_list_str . ".<br>";
-    
-    echo "In addition to web development, I'm passionate about design and enjoy using tools like " 
-    . $software_str . ". I'm also eager to learn the " . $info['future_learning_goals'] 
-    . " and delve into it in the near future.";
-}
-
-introduce_myself($introduction);
-?>
-```
 ### Programming Languages
 
 <div align="left">
@@ -120,8 +126,6 @@ introduce_myself($introduction);
   <img src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Lutz98&theme=tokyonight&utcOffset=+6.5" width="49%" height="auto" style="display: inline;" />
 </div>
 
-<!--
 <div align="center">
-    <img src="https://raw.githubusercontent.com/Lutreze16/Lutreze16/output/snake.svg" alt="Snake animation" width="100%" height="auto" />
+    <img src="https://raw.githubusercontent.com/Lutz98/Lutz98/output/snake.svg" alt="Snake animation" width="100%" height="auto" />
 </div>
--->
